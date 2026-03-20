@@ -1,0 +1,234 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.progress-container {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: rgb(226, 234, 78);
+  transition: width 0.3s;
+  /* z-index: 1; */
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* z-index: 2; */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(221, 221, 221);
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  transition: 0.3s;
+}
+
+.step.active .step-circle::after {
+  content: "i";
+  /* background: ; */
+  color: black;
+  border-color: red;
+}
+
+.step.completed .step-circle {
+  background: rgb(18, 168, 7);
+  color: white;
+  border-color: rgb(181, 172, 172);
+}
+
+.step.completed .step-circle i {
+  display: none;
+}
+
+.step.completed .step-circle::after {
+  content: "✓";
+  font-size: 18px;
+}
+
+.step-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgb(13, 1, 0);
+}
+
+.step.active .step-label {
+  color: black;
+}
+
+.step.completed .step-label {
+  color: black;
+}
+
+.form-container {
+  min-height: 300px;
+  margin-bottom: 30px;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-step h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* .form-group input:focus {
+  border-color: red;
+  
+} */
+
+.review-card {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+}
+
+.review-card p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: rgb(58, 152, 240);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: rgb(247, 56, 34);
+  color: white;
+}
+
+.btn-primary:hover :not(:disabled){
+  background: rgb(69, 160, 73);
+}
+
+.btn-secondary {
+  background: rgb(210, 207, 207);
+  color: #333;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgb(148, 145, 145);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+}
+
+/* AI */
