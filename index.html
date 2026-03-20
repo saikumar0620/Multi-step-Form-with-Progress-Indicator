@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="crossorigin="anonymous"referrerpolicy="no-referrer"/>
-    <script src="script.js" defer></script>
+    <script type= "module" src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -55,11 +55,11 @@
             <h2>Create Account</h2>
             <div class="form-group">
               <label>Email:</label>
-              <input type="email"  placeholder="sai@example.com" />
+              <input type="email"  placeholder="sai@example.com" required />
             </div> 
             <div class="form-group">
               <label>Password:</label>
-              <input type="password" placeholder="Enter password.." />
+              <input type="password" placeholder="Enter password.." required />
             </div>
           </div>
 
@@ -67,11 +67,11 @@
             <h2>Personal Details</h2>
             <div class="form-group">
               <label>Full Name</label>
-              <input type="text" placeholder="saikumar..." />
+              <input type="text" placeholder="saikumar..."required />
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="tel" placeholder="630230***" />
+              <input type="tel" placeholder="630230***"required />
             </div>
           </div>
 
@@ -79,11 +79,11 @@
             <h2>Payment Information</h2>
             <div class="form-group">
               <label>Card Number</label>
-              <input type="text" placeholder="1234 5678 9012 3456" />
+              <input type="text" placeholder="1234 5678 9012 3456"required />
             </div>
             <div class="form-group">
               <label>Expiry Date</label>
-              <input type="text" placeholder="MM/YY" />
+              <input type="text" placeholder="MM/YY" required/>
             </div>
           </div>
 
