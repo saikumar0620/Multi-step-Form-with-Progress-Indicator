@@ -3,7 +3,7 @@
 A responsive, multi-step form that guides users through Account, Details, Payment, and Review steps, showing real-time progress and inline validation.
 
 ## Demo
-•⁠  ⁠Live demo: https://saikumar0620.github.io/progress-step/
+•⁠  ⁠Live demo: https://saikumar0620.github.io/Multi-step-Form-with-Progress-Indicator/
 
 ## Features
 •⁠  ⁠🚦 Progress bar with active/completed step states
