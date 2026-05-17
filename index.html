@@ -1,23 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi Steps Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="crossorigin="anonymous"referrerpolicy="no-referrer"/>
-    <script type= "module" src="script.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
       <div class="card">
-        <h1>Multi-Steps Form</h1>
-        <p class="subtitle">Complete all steps to finish</p>
+        <div class="card-header" id="cardHeader">
+          <h1>Multi-Steps Form</h1>
+          <p class="subtitle">Complete all steps to finish</p>
+        </div>
 
-        <!-- PROGRESS STEPS -->
-        <div class="progress-container">
-          <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          
           <div class="steps">
             <div class="step active">
               <div class="step-circle">
@@ -49,63 +55,109 @@
           </div>
         </div>
 
-        <!-- FORM STEPS -->
-        <div class="form-container" id="multiForm">
-          <div class="form-step active">
+        <form class="form-container" id="multiForm" novalidate>
+          <div class="form-step active" data-step="1">
             <h2>Create Account</h2>
+            
             <div class="form-group">
-              <label>Email:</label>
-              <input type="email"  placeholder="sai@example.com" required />
+              <label for="email">Email:</label>
+              <div class="input-wrapper">
+                <input type="email" id="email" placeholder="sai@example.com" required />
+              </div>
+              <span class="error-msg" id="email-error"></span>
             </div> 
+            
             <div class="form-group">
-              <label>Password:</label>
-              <input type="password" placeholder="Enter password.." required />
+              <label for="password">Password:</label>
+              <div class="input-wrapper">
+                <input type="password" id="password" placeholder="Enter password.." required />
+              </div>
+              <span class="error-msg" id="password-error"></span>
             </div>
           </div>
 
-          <div class="form-step">
+          <div class="form-step" data-step="2">
             <h2>Personal Details</h2>
+            
             <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" placeholder="saikumar..."required />
+              <label for="fullname">Full Name</label>
+              <div class="input-wrapper">
+                <input type="text" id="fullname" placeholder="saikumar..." required />
+              </div>
+              <span class="error-msg" id="fullname-error"></span>
             </div>
+            
             <div class="form-group">
-              <label>Phone</label>
-              <input type="tel" placeholder="630230***"required />
+              <label for="phone">Phone</label>
+              <div class="input-wrapper">
+                <input type="tel" id="phone" placeholder="630230..." required />
+              </div>
+              <span class="error-msg" id="phone-error"></span>
             </div>
           </div>
 
-          <div class="form-step">
+          <div class="form-step" data-step="3">
             <h2>Payment Information</h2>
+            
             <div class="form-group">
-              <label>Card Number</label>
-              <input type="text" placeholder="1234 5678 9012 3456"required />
+              <label for="cardnumber">Card Number</label>
+              <div class="input-wrapper">
+                <input type="text" id="cardnumber" placeholder="1234 5678 9012 3456" required />
+              </div>
+              <span class="error-msg" id="cardnumber-error"></span>
             </div>
+            
             <div class="form-group">
-              <label>Expiry Date</label>
-              <input type="text" placeholder="MM/YY" required/>
+              <label for="expiry">Expiry Date</label>
+              <div class="input-wrapper">
+                <input type="text" id="expiry" placeholder="MM/YY" required />
+              </div>
+              <span class="error-msg" id="expiry-error"></span>
             </div>
           </div>
 
-          <div class="form-step">
+          <div class="form-step" data-step="4">
             <h2>Review & Confirm</h2>
+            
             <div class="review-card">
-              <p>Please review your information before submitting.</p>
-              <div class="success-icon">
-                <i class="fa-solid fa-check">✓</i>
+              <p class="review-intro">Please review your information before submitting.</p>
+              
+              <div class="review-summary">
+                <div class="summary-item">
+                  <span class="summary-label">Email</span>
+                  <span class="summary-value" id="summary-email">-</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Name</span>
+                  <span class="summary-value" id="summary-fullname">-</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Phone</span>
+                  <span class="summary-value" id="summary-phone">-</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Payment</span>
+                  <span class="summary-value" id="summary-payment">-</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- NAVIGATION BUTNS -->
-        <div class="buttons">
-          <button class="btn btn-secondary" id="prevBtn" disabled>Previous</button>
-          <button class="btn btn-primary" id="nextBtn">Next -- ></button>
+          <div class="buttons" id="actionButtons">
+            <button type="button" class="btn btn-secondary" id="prevBtn" disabled>Previous</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+          </div>
+        </form>
+
+        <div class="success-state" id="successState">
+          <div class="success-circle">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h2>Registration Successful!</h2>
+          <p>Your details have been successfully uploaded.</p>
+          <button type="button" class="btn btn-primary" id="restartBtn">Reset Form</button>
         </div>
       </div>
     </div>
   </body>
 </html>
-
-
